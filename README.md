@@ -5,7 +5,7 @@ StreamVerse
 
 Welcome to StreamVerse, the go-to platform for streaming HD movies online. Created by VIT students, this project aims to provide a smooth, user-friendly movie streaming experience with a modern interface and high-quality content.
 
-streamverse.biz
+[streamverse.biz](https://streamverse.biz)
 
 
 
@@ -27,13 +27,13 @@ Responsive Design: Enjoy a seamless experience across devices with our responsiv
 
 Tech Stack
 
-Next.js – Framework for server-rendered React applications.
+[Next.js](https://nextjs.org/) – Framework for server-rendered React applications.
 
-TypeScript – Statically typed JavaScript.
+[TypeScript](https://www.typescriptlang.org/) – Statically typed JavaScript.
 
-Tailwind CSS – Utility-first CSS framework.
+[Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework.
 
-TMDb – For fetching movie data.
+[TMDb](https://www.themoviedb.org/) – For fetching movie data.
 
 vidbinge.com – For streaming movie links.
 
