@@ -5,6 +5,8 @@ StreamVerse
 
 Welcome to StreamVerse, the go-to platform for streaming HD movies online. Created by VIT students, this project aims to provide a smooth, user-friendly movie streaming experience with a modern interface and high-quality content.
 
+streamverse.biz
+
 
 
 Features
