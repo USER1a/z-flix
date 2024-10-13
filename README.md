@@ -2,7 +2,9 @@
 
 StreamVerse
 
+
 Welcome to StreamVerse, the go-to platform for streaming HD movies online. Created by VIT students, this project aims to provide a smooth, user-friendly movie streaming experience with a modern interface and high-quality content.
+
 
 
 Features
@@ -32,6 +34,7 @@ Tailwind CSS – Utility-first CSS framework.
 TMDb – For fetching movie data.
 
 vidbinge.com – For streaming movie links.
+
 
 
 
@@ -65,9 +68,11 @@ git push origin feature/your-feature-name
 
 
 
+
 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 
 Acknowledgements
