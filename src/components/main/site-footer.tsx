@@ -18,7 +18,6 @@ const SiteFooter = () => {
                       size: "sm",
                       variant: "ghost",
                       className:
-                        // "rounded-none text-neutral-700 hover:bg-transparent dark:text-neutral-50 dark:hover:bg-transparent",
                         "rounded-none hover:bg-transparent",
                     })}
                   >
@@ -46,7 +45,6 @@ const SiteFooter = () => {
           @ 2023-{new Date().getFullYear()} {siteConfig.author}.
         </p>
       </div>
-      {/* <div className="container flex flex-col items-center justify-between md:h-24 md:flex-row md:py-0 gap-4"> */}
       <div className="container flex h-24 items-center gap-2 px-8">
         <Icons.play className="hidden h-6 w-6 md:block" />
         <p className="text-center text-xs leading-loose sm:text-sm md:text-left">
@@ -71,7 +69,14 @@ const SiteFooter = () => {
           .
         </p>
       </div>
-      {/* </div> */}
+
+      {/* Ad script */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<script async="async" data-cfasync="false" src="//latelyninetyfeelings.com/90ed2567d0784fbededf878dd85cad3c/invoke.js"></script>
+                   <div id="container-90ed2567d0784fbededf878dd85cad3c"></div>`,
+        }}
+      ></div>
     </footer>
   );
 };
