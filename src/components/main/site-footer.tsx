@@ -7,6 +7,13 @@ import { Icons } from "@/components/icons";
 const SiteFooter = () => {
   return (
     <footer aria-label="Footer" className="w-full">
+      {/* Ad script */}
+      <div
+        dangerouslySetInnerHTML={{
+          __html: `<script async="async" data-cfasync="false" src="//latelyninetyfeelings.com/90ed2567d0784fbededf878dd85cad3c/invoke.js"></script>
+                   <div id="container-90ed2567d0784fbededf878dd85cad3c"></div>`,
+        }}
+      ></div>
       <div className="container grid w-full max-w-6xl gap-7 py-10">
         <div className="flex flex-wrap items-center gap-2">
           {siteConfig.socialLinks.map(
@@ -70,13 +77,7 @@ const SiteFooter = () => {
         </p>
       </div>
 
-      {/* Ad script */}
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `<script async="async" data-cfasync="false" src="//latelyninetyfeelings.com/90ed2567d0784fbededf878dd85cad3c/invoke.js"></script>
-                   <div id="container-90ed2567d0784fbededf878dd85cad3c"></div>`,
-        }}
-      ></div>
+      
     </footer>
   );
 };
