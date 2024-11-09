@@ -25,7 +25,7 @@ export default function Index() {
           <span className="sr-only">Twitter</span>
         </Link>
         <h1 className="max-w-screen-lg text-center font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-          {siteConfig.name} - {/* {siteConfig.slogan} */}
+          {siteConfig.name} {/*-  {siteConfig.slogan} */}
           {/* {siteConfig.name} - watch tv shows online, watch movies online. */}
           {/* An e-commerce skateshop built with everything new in Next.js 13 */}
         </h1>
