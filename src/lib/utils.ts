@@ -56,13 +56,20 @@ export function getSlug(id: number, name: string): string {
   return `${name.toLowerCase().replace(regex, '-')}-${id}`;
 }
 
-export function buildMovieUrl(show: Show): string {
+/*export function buildMovieUrl(show: Show): string {
   const name = getNameFromShow(show);
   const id = show.id;
   return `${env.NEXT_PUBLIC_APP_URL}/${
     show.media_type === MediaType.MOVIE ? 'movies' : 'tv-shows'
   }/${getSlug(id, name)}`;
+} */
+export function buildMovieUrl(show: Show): string {
+  const id = show.id;
+  return `${env.NEXT_PUBLIC_APP_URL}/${
+    show.media_type === MediaType.MOVIE ? 'movies' : 'tv-shows'
+  }/${id}`;
 }
+
 
 export function getIdFromSlug(slug: string): number {
   // get id from slug
