@@ -2,8 +2,8 @@
 
 export enum MediaType {
   ALL = 'all',
-  TV = 'tv',
-  MOVIE = 'movie',
+  TV = 'tv-shows',
+  MOVIE = 'movies',
 }
 
 export type CategorizedShows = {
