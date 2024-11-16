@@ -145,6 +145,7 @@ export default function RootLayout({
     </a>
   </div>
 </noscript>
+          <script defer src="https://cloud.umami.is/script.js" data-website-id="f442e6bb-9667-4262-9abd-73a77381c170"></script>
         </ThemeProvider>
         
       </body>
