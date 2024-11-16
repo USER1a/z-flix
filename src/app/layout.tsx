@@ -114,6 +114,37 @@ export default function RootLayout({
               />
             </>
           )}
+          {/* Statcounter Code Integration */}
+<Script
+  id="statcounter"
+  dangerouslySetInnerHTML={{
+    __html: `
+    var sc_project=13061182; 
+    var sc_invisible=1; 
+    var sc_security="78c4c774"; 
+    `,
+  }}
+/>
+<Script
+  src="https://www.statcounter.com/counter/counter.js"
+  async
+/>
+<noscript>
+  <div className="statcounter">
+    <a
+      title="Web Analytics"
+      href="https://statcounter.com/"
+      target="_blank"
+    >
+      <img
+        className="statcounter"
+        src="https://c.statcounter.com/13061182/0/78c4c774/1/"
+        alt="Web Analytics"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    </a>
+  </div>
+</noscript>
         </ThemeProvider>
         
       </body>
