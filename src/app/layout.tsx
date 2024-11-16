@@ -120,7 +120,7 @@ export default function RootLayout({
   dangerouslySetInnerHTML={{
     __html: `
     var sc_project=13061182; 
-    var sc_invisible=1; 
+    var sc_invisible=0; 
     var sc_security="78c4c774"; 
     `,
   }}
