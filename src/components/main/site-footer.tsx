@@ -72,18 +72,20 @@ const SiteFooter = () => {
       </div>
           {/* Adding the external script using dangerouslySetInnerHTML */}
       <div
-        dangerouslySetInnerHTML={{
-          __html: `
-            <script type='text/javascript' src='//abberantpawnpalette.com/ec/cb/24/eccb241596f6411c0cb80a81006751df.js'></script>
-          `,
-        }}
-      />
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `<script async="async" data-cfasync="false" src="//abberantpawnpalette.com/90ed2567d0784fbededf878dd85cad3c/invoke.js"></script>
-<div id="container-90ed2567d0784fbededf878dd85cad3c"></div>
-        }}
-      />
+  dangerouslySetInnerHTML={{
+    __html: `
+      <script type='text/javascript' src='//abberantpawnpalette.com/ec/cb/24/eccb241596f6411c0cb80a81006751df.js'></script>
+    `,
+  }}
+/>
+<div
+  dangerouslySetInnerHTML={{
+    __html: `
+      <script async="async" data-cfasync="false" src="//abberantpawnpalette.com/90ed2567d0784fbededf878dd85cad3c/invoke.js"></script>
+      <div id="container-90ed2567d0784fbededf878dd85cad3c"></div>
+    `,
+  }}
+/>
 
       
     </footer>
