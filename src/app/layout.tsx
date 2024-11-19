@@ -146,8 +146,6 @@ export default function RootLayout({
   </div>
 </noscript>
           <script defer src="https://cloud.umami.is/script.js" data-website-id="f442e6bb-9667-4262-9abd-73a77381c170"></script>
-          <script type='text/javascript' src='//abberantpawnpalette.com/23/5a/d6/235ad6b2de46117f95b93785b3b0198b.js'></script>
-          <script type='text/javascript' src='//abberantpawnpalette.com/ec/cb/24/eccb241596f6411c0cb80a81006751df.js'></script>
         </ThemeProvider>
         
       </body>
