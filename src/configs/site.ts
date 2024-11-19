@@ -421,7 +421,7 @@ export const siteConfig = {
 'Watch Movies Free on iPad',
 'Best Sites for Streaming Movies HD',
 'Free TV Shows Online without Signup',
-'Free Movie Streaming Sites HD Free'   
+'Free Movie Streaming Sites HD Free',
     env.NEXT_PUBLIC_SITE_NAME,
   ],
   url: env.NEXT_PUBLIC_APP_URL,
