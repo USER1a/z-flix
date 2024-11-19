@@ -6,7 +6,6 @@ import { RequestType, type ShowRequest } from '@/enums/request-type';
 import MovieService from '@/services/MovieService';
 import { Genre } from '@/enums/genre';
 import { getRandomShow } from '@/lib/utils';
-import { useEffect } from 'react';
 
 export const revalidate = 3600;
 
@@ -80,19 +79,6 @@ export default async function Home() {
   ];
   const allShows = await MovieService.getShows(requests);
   const randomShow: Show | null = getRandomShow(allShows);
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = '//abberantpawnpalette.com/23/5a/d6/235ad6b2de46117f95b93785b3b0198b.js';
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script); // Clean up script on component unmount
-    };
-  }, []);
-
   return (
     <>
       <h1 className="hidden">{h1}</h1>
@@ -100,4 +86,4 @@ export default async function Home() {
       <ShowsContainer shows={allShows} />
     </>
   );
-}
+} 
