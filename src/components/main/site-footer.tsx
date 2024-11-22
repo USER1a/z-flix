@@ -73,13 +73,8 @@ const SiteFooter = () => {
           {/* Adding the external script using dangerouslySetInnerHTML */}
       <div
   dangerouslySetInnerHTML={{
-    __html: `
-      <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-      <script type="text/javascript">
-    aclib.runAutoTag({
-        zoneId: 'g2webfjjs8',
-    });
-</script>
+    __html: `<script type='text/javascript' src='//abberantpawnpalette.com/ec/cb/24/eccb241596f6411c0cb80a81006751df.js'></script>
+      
  `,
   }}
 />
