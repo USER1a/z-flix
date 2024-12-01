@@ -146,6 +146,11 @@ export default function RootLayout({
   </div>
 </noscript>
           <script defer src="https://cloud.umami.is/script.js" data-website-id="f442e6bb-9667-4262-9abd-73a77381c170"></script>
+          <script type="text/javascript" data-cfasync="false">
+/*<![CDATA[/* */
+(function(){var c=window,d="c45fdd13b81808e704f8cec79d2fdcd7",a=[["siteId",413+416-266+744*347+4896082],["minBid",0],["popundersPerIP","0"],["delayBetween",0],["default",false],["defaultPerDay",0],["topmostLayer","auto"]],m=["d3d3LmRpc3BsYXl2ZXJ0aXNpbmcuY29tL2Rqcy15YW1sLm1pbi5jc3M=","ZDNtem9rdHk5NTFjNXcuY2xvdWRmcm9udC5uZXQveXJSbG9SL3ZVUE5HLm1pbi5qcw=="],s=-1,h,t,q=function(){clearTimeout(t);s++;if(m[s]&&!(1758996414000<(new Date).getTime()&&1<s)){h=c.document.createElement("script");h.type="text/javascript";h.async=!0;var k=c.document.getElementsByTagName("script")[0];h.src="https://"+atob(m[s]);h.crossOrigin="anonymous";h.onerror=q;h.onload=function(){clearTimeout(t);c[d.slice(0,16)+d.slice(0,16)]||q()};t=setTimeout(q,5E3);k.parentNode.insertBefore(h,k)}};if(!c[d]){try{Object.freeze(c[d]=a)}catch(e){}q()}})();
+/*]]>/* */
+</script>
         </ThemeProvider>
         
       </body>
