@@ -7,8 +7,8 @@ export default function Page({ params }: { params: { slug: string } }) {
   const id = params.slug.split('-').pop();
 
   // Example with vidbinge.dev
-  //return <EmbedPlayer url={`https://flicky.host/embed/movie/${id}`} />;
-  return <EmbedPlayer url={`https://vidbinge.dev/embed/movie/${id}`} />;
+  return <EmbedPlayer url={`https://flicky.host/embed/movie/${id}`} />;
+  //return <EmbedPlayer url={`https://vidbinge.dev/embed/movie/${id}`} />;
 
   // You can switch between these options by uncommenting the desired line:
   // return <EmbedPlayer url={`https://embed.su/embed/movie/${id}`} />;
