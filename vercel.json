@@ -5,7 +5,5 @@
       "destination": "/home",
       "permanent": true
     }
-  ],
-  "cleanUrls": true, // Removes `.html` from URLs if you're using static files
-  "trailingSlash": false // Controls whether URLs include trailing slashes
+  ]
 }
