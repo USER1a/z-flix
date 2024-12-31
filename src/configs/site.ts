@@ -488,6 +488,12 @@ export const siteConfig = {
       href: '/new-and-popular',
       // icon: Icons.trendingUp,
     },
+    {
+      title: 'About',
+      href: 'https://developer.streamverse.biz',
+      // icon: Icons.trendingUp,
+    },
+    
     // {
     //   title: "My List",
     //   href: "/my-list",
