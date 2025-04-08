@@ -23,25 +23,23 @@ export default async function TvShowPage() {
       visible: true,
     },
     {
-      title: 'Popular',
+      title: 'Top Rated',
       req: {
         requestType: RequestType.TOP_RATED,
         mediaType: MediaType.TV,
-        genre: Genre.FAMILY,
       },
       visible: true,
     },
     {
-      title: 'Comedy TV Shows',
+      title: 'Most Popular',
       req: {
-        requestType: RequestType.GENRE,
+        requestType: RequestType.POPULAR,
         mediaType: MediaType.TV,
-        genre: Genre.COMEDY,
       },
       visible: true,
     },
     {
-      title: 'Action TV Shows',
+      title: 'Action & Adventure',
       req: {
         requestType: RequestType.GENRE,
         mediaType: MediaType.TV,
@@ -50,7 +48,43 @@ export default async function TvShowPage() {
       visible: true,
     },
     {
-      title: 'Drama TV Shows',
+      title: 'Animation',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.TV,
+        genre: Genre.ANIMATION,
+      },
+      visible: true,
+    },
+    {
+      title: 'Comedy',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.TV,
+        genre: Genre.COMEDY,
+      },
+      visible: true,
+    },
+    {
+      title: 'Crime',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.TV,
+        genre: Genre.CRIME,
+      },
+      visible: true,
+    },
+    {
+      title: 'Documentary',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.TV,
+        genre: Genre.DOCUMENTARY,
+      },
+      visible: true,
+    },
+    {
+      title: 'Drama',
       req: {
         requestType: RequestType.GENRE,
         mediaType: MediaType.TV,
@@ -59,15 +93,43 @@ export default async function TvShowPage() {
       visible: true,
     },
     {
-      title: 'Scary TV Shows',
+      title: 'Family',
       req: {
         requestType: RequestType.GENRE,
         mediaType: MediaType.TV,
-        genre: Genre.THRILLER,
+        genre: Genre.FAMILY,
+      },
+      visible: true,
+    },
+    {
+      title: 'Kids',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.TV,
+        genre: Genre.KIDS,
+      },
+      visible: true,
+    },
+    {
+      title: 'Mystery',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.TV,
+        genre: Genre.MYSTERY,
+      },
+      visible: true,
+    },
+    {
+      title: 'News',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.TV,
+        genre: Genre.NEWS,
       },
       visible: true,
     },
   ];
+
   const allShows = await MovieService.getShows(requests);
   const randomShow: Show | null = getRandomShow(allShows);
 
