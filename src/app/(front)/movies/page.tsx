@@ -11,6 +11,7 @@ export const revalidate = 3600;
 
 export default async function MoviePage() {
   const h1 = `${siteConfig.name} Movie`;
+
   const requests: ShowRequest[] = [
     {
       title: 'Trending Now',
@@ -28,16 +29,17 @@ export default async function MoviePage() {
       visible: true,
     },
     {
-      title: 'Comedy Movies',
-      req: {
-        requestType: RequestType.GENRE,
-        mediaType: MediaType.MOVIE,
-        genre: Genre.COMEDY,
-      },
+      title: 'Top Rated',
+      req: { requestType: RequestType.TOP_RATED, mediaType: MediaType.MOVIE },
       visible: true,
     },
     {
-      title: 'Action Movies',
+      title: 'Most Popular',
+      req: { requestType: RequestType.POPULAR, mediaType: MediaType.MOVIE },
+      visible: true,
+    },
+    {
+      title: 'Action',
       req: {
         requestType: RequestType.GENRE,
         mediaType: MediaType.MOVIE,
@@ -46,26 +48,109 @@ export default async function MoviePage() {
       visible: true,
     },
     {
-      title: 'Romance Movies',
+      title: 'Adventure',
       req: {
         requestType: RequestType.GENRE,
         mediaType: MediaType.MOVIE,
-        genre: Genre.ROMANCE,
+        genre: Genre.ADVENTURE,
       },
       visible: true,
     },
     {
-      title: 'Scary Movies',
+      title: 'Animation',
       req: {
         requestType: RequestType.GENRE,
         mediaType: MediaType.MOVIE,
-        genre: Genre.THRILLER,
+        genre: Genre.ANIMATION,
+      },
+      visible: true,
+    },
+    {
+      title: 'Comedy',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.COMEDY,
+      },
+      visible: true,
+    },
+    {
+      title: 'Crime',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.CRIME,
+      },
+      visible: true,
+    },
+    {
+      title: 'Documentary',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.DOCUMENTARY,
+      },
+      visible: true,
+    },
+    {
+      title: 'Drama',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.DRAMA,
+      },
+      visible: true,
+    },
+    {
+      title: 'Family',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.FAMILY,
+      },
+      visible: true,
+    },
+    {
+      title: 'Fantasy',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.FANTASY,
+      },
+      visible: true,
+    },
+    {
+      title: 'History',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.HISTORY,
+      },
+      visible: true,
+    },
+    {
+      title: 'Horror',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.HORROR,
+      },
+      visible: true,
+    },
+    {
+      title: 'Music',
+      req: {
+        requestType: RequestType.GENRE,
+        mediaType: MediaType.MOVIE,
+        genre: Genre.MUSIC,
       },
       visible: true,
     },
   ];
+
   const allShows = await MovieService.getShows(requests);
   const randomShow: Show | null = getRandomShow(allShows);
+
   return (
     <>
       <h1 className="hidden">{h1}</h1>
