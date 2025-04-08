@@ -155,7 +155,7 @@ class MovieService extends BaseService {
 
   static searchMovies = cache(async (query: string, page?: number) => {
     const { data } = await this.axios(BASE_URL).get<TmdbPagingResponse>(
-      `/search/movie?query=${encodeURIComponent(query)}&language=en-US&page=${
+      `/search/multi?query=${encodeURIComponent(query)}&language=en-US&page=${
         page ?? 1
       }`,
     );
