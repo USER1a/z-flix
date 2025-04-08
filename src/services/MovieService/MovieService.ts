@@ -17,6 +17,7 @@ import {
 import { Genre } from '@/enums/genre';
 import { cache } from 'react';
 
+const BASE_URL = 'https://tmdb-a62z.onrender.com/api'; // Proxy server
 const requestTypesNeedUpdateMediaType = [
   RequestType.TOP_RATED,
   RequestType.NETFLIX,
@@ -24,7 +25,6 @@ const requestTypesNeedUpdateMediaType = [
   RequestType.GENRE,
   RequestType.KOREAN,
 ];
-const baseUrl = 'https://api.themoviedb.org/3';
 
 class MovieService extends BaseService {
   static async findCurrentMovie(id: number, pathname: string): Promise<Show> {
@@ -47,18 +47,18 @@ class MovieService extends BaseService {
   }
 
   static findMovie = cache(async (id: number) => {
-    return this.axios(baseUrl).get<Show>(`/movie/${id}`);
+    return this.axios(BASE_URL).get<Show>(`/movie/${id}`);
   });
 
   static findTvSeries = cache(async (id: number) => {
-    return this.axios(baseUrl).get<Show>(`/tv/${id}`);
+    return this.axios(BASE_URL).get<Show>(`/tv/${id}`);
   });
 
   static async getKeywords(
     id: number,
     type: 'tv' | 'movie',
   ): Promise<AxiosResponse<KeyWordResponse>> {
-    return this.axios(baseUrl).get<KeyWordResponse>(`/${type}/${id}/keywords`);
+    return this.axios(BASE_URL).get<KeyWordResponse>(`/${type}/${id}/keywords`);
   }
 
   static findMovieByIdAndType = cache(async (id: number, type: string) => {
@@ -67,7 +67,7 @@ class MovieService extends BaseService {
       append_to_response: 'videos',
     };
     const response: AxiosResponse<ShowWithGenreAndVideo> = await this.axios(
-      baseUrl,
+      BASE_URL,
     ).get<ShowWithGenreAndVideo>(`/${type}/${id}`, { params });
     return Promise.resolve(response.data);
   });
@@ -116,7 +116,7 @@ class MovieService extends BaseService {
     mediaType: MediaType;
     page?: number;
   }) {
-    return this.axios(baseUrl).get<TmdbPagingResponse>(this.urlBuilder(req));
+    return this.axios(BASE_URL).get<TmdbPagingResponse>(this.urlBuilder(req));
   }
 
   static getShows = cache(async (requests: ShowRequest[]) => {
@@ -154,15 +154,12 @@ class MovieService extends BaseService {
   });
 
   static searchMovies = cache(async (query: string, page?: number) => {
-    const { data } = await this.axios(baseUrl).get<TmdbPagingResponse>(
+    const { data } = await this.axios(BASE_URL).get<TmdbPagingResponse>(
       `/search/multi?query=${encodeURIComponent(query)}&language=en-US&page=${
         page ?? 1
       }`,
     );
-    console.log(data.results[0]?.media_type);
-    data.results.sort((a, b) => {
-      return b.popularity - a.popularity;
-    });
+    data.results.sort((a, b) => b.popularity - a.popularity);
     return data;
   });
 }
