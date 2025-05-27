@@ -4,7 +4,7 @@ import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
-// import { TrpcProvider } from '@/client/trpc-provider'; // This line is commented out in your original code
+// import { TrpcProvider } from '@/client/trpc-provider'; // This line was commented out in your original code
 import type { Metadata, Viewport } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -15,6 +15,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script'; // Ensure this is imported
 
 // REMOVED: export const runtime = 'edge';
+// This line was causing the "Event handlers cannot be passed to Client Component props" error
+// because it forced the RootLayout into the Edge Runtime, which doesn't support client-side
+// interactivity or event handlers directly within its server-side rendering scope.
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -88,6 +91,7 @@ export default function RootLayout({
         onLoad={() => {
           console.log('Adcash: aclib.js has loaded.');
           // Check if aclib and its method are available before calling
+          // Using 'window as any' to bypass TypeScript type checking for global 'aclib'
           if (typeof (window as any).aclib !== 'undefined' && typeof (window as any).aclib.runAutoTag === 'function') {
             try {
               (window as any).aclib.runAutoTag({
@@ -123,7 +127,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <TrpcProvider> */}
+          {/* <TrpcProvider> */} {/* This is commented out in your original code */}
           {children}
           <TailwindIndicator />
           <Analytics />
