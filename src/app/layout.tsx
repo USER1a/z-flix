@@ -158,6 +158,25 @@ export default function RootLayout({
             src="https://cloud.umami.is/script.js"
             data-website-id="f442e6bb-9667-4262-9abd-73a77381c170"
           ></script>
+          {/* ACLIB Loader Script */}
+<Script
+  src="https://acscdn.com/aclib.js" // Confirm this is the correct loader URL
+  strategy="afterInteractive"
+/>
+
+{/* ACLIB AutoTag Script */}
+<Script
+  id="aclib-autotag"
+  type="text/javascript"
+  strategy="afterInteractive"
+  dangerouslySetInnerHTML={{
+    __html: `
+      aclib.runAutoTag({
+        zoneId: '5btepwt88m',
+      });
+    `,
+  }}
+/>
         </ThemeProvider>
       </body>
     </html>
