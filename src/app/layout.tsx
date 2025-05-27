@@ -77,34 +77,40 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* Adcash Step 1: Include Adcash library */}
-      {/* This script is placed in the <head> and loaded/executed before the page is interactive */}
-      {/* due to the 'beforeInteractive' strategy. */}
+      {/* Adcash Integration using onLoad to ensure proper script execution order */}
       <Script
         id="aclib" // ID from Adcash instructions
         type="text/javascript" // Type from Adcash instructions
         src="//acscdn.com/script/aclib.js"
-        strategy="beforeInteractive"
-      />
-      {/* Adcash Step 2: Put the tag script on the page */}
-      {/* This script will also be placed in <head> after aclib.js (due to 'beforeInteractive' */}
-      {/* strategy and its order of definition here) and executed. */}
-      <Script
-        id="aclib-runAutoTag" // Unique ID for this Next.js Script component
-        type="text/javascript" // Type from Adcash instructions
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-  aclib.runAutoTag({
-      zoneId: '3wxrn4xx94',
-  });
-`,
+        strategy="beforeInteractive" // Loads the library early in <head>
+        onLoad={() => {
+          console.log('Adcash: aclib.js has loaded.');
+          // Check if aclib and its method are available before calling
+          if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
+            try {
+              aclib.runAutoTag({
+                zoneId: '3wxrn4xx94', // Your Adcash Zone ID
+              });
+              console.log('Adcash: aclib.runAutoTag has been executed.');
+            } catch (e) {
+              console.error('Adcash: Error executing aclib.runAutoTag:', e);
+            }
+          } else {
+            console.error('Adcash: aclib object or aclib.runAutoTag function is not defined after aclib.js loaded. The Adcash library might not have initialized correctly or as expected.');
+          }
+        }}
+        onError={(e) => {
+          // This will trigger if the aclib.js script itself fails to load (e.g., network error, 404)
+          console.error('Adcash: Failed to load aclib.js script:', e);
         }}
       />
+      {/* Note: The second Adcash <Script> tag for runAutoTag (from the previous attempt) is NOT needed here,
+          as its JavaScript logic is now invoked directly and more safely via the onLoad callback above
+          once aclib.js has successfully loaded. */}
 
       <body
         className={cn(
-          'overflow-y-auto min-h-screen overflow-x-hidden bg-background font-sans antialiased', // Corrected typo: overlflow -> overflow
+          'overflow-y-auto min-h-screen overflow-x-hidden bg-background font-sans antialiased', // Typo was already corrected
           fontSans.variable,
           fontHeading.variable,
         )}
