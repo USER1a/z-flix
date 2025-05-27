@@ -36,8 +36,8 @@ themeColor: [
 export const metadata: Metadata = {
 metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
 title: {
-default: 'StreamVerse - Watch TV Shows Online, Watch Movies Online',
-template: %s - StreamVerse - Watch TV Shows Online, Watch Movies Online,
+  default: 'StreamVerse - Watch TV Shows Online, Watch Movies Online',
+  template: `%s - StreamVerse - Watch TV Shows Online, Watch Movies Online`,
 },
 description: siteConfig.description,
 keywords: siteConfig.keywords,
