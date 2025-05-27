@@ -1,8 +1,10 @@
+// app/layout.tsx
+
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
-// import { TrpcProvider } from '@/client/trpc-provider';
+// import { TrpcProvider } from '@/client/trpc-provider'; // This line is commented out in your original code
 import type { Metadata, Viewport } from 'next';
 import { Inter as FontSans } from 'next/font/google';
 import localFont from 'next/font/local';
@@ -12,7 +14,7 @@ import { env } from '@/env.mjs';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from 'next/script'; // Ensure this is imported
 
-export const runtime = 'edge';
+// REMOVED: export const runtime = 'edge';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -86,9 +88,9 @@ export default function RootLayout({
         onLoad={() => {
           console.log('Adcash: aclib.js has loaded.');
           // Check if aclib and its method are available before calling
-          if (typeof aclib !== 'undefined' && typeof aclib.runAutoTag === 'function') {
+          if (typeof (window as any).aclib !== 'undefined' && typeof (window as any).aclib.runAutoTag === 'function') {
             try {
-              aclib.runAutoTag({
+              (window as any).aclib.runAutoTag({
                 zoneId: '3wxrn4xx94', // Your Adcash Zone ID
               });
               console.log('Adcash: aclib.runAutoTag has been executed.');
